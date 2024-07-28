@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://divb718sekrmt"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_7rdpv"]
+[ext_resource type="Script" path="res://InventorySlot.gd" id="1_kkn2p"]
+[ext_resource type="Texture2D" uid="uid://byr5gxng10vlv" path="res://icon.svg" id="2_35xq5"]
+[ext_resource type="Script" path="res://InventoryItem.gd" id="3_dabhg"]
+[ext_resource type="Texture2D" uid="uid://wu25rfrxx5ew" path="res://image.png" id="3_t0xy0"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_7rdpv")
+
+[node name="HUDBG" type="ColorRect" parent="."]
+offset_top = 380.0
+offset_right = 640.0
+offset_bottom = 512.0
+color = Color(0.392157, 0, 1, 0.219608)
+
+[node name="Message" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 640.0
+offset_bottom = 512.0
+text = "Message"
+
+[node name="Portrait" type="TextureRect" parent="."]
+offset_top = 272.0
+offset_right = 150.0
+offset_bottom = 512.0
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+offset_left = 640.0
+offset_top = 380.0
+offset_right = 976.0
+offset_bottom = 512.0
+columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="TextureRect" type="TextureRect" parent="InventoryGrid/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_35xq5")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_dabhg")
+
+[node name="PanelContainer2" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="TextureRect" type="TextureRect" parent="InventoryGrid/PanelContainer2"]
+layout_mode = 2
+texture = ExtResource("3_t0xy0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_dabhg")
+
+[node name="PanelContainer3" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer4" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer5" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer6" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer7" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer8" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer9" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="PanelContainer10" type="PanelContainer" parent="InventoryGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_kkn2p")
+
+[node name="InventoryButton" type="Button" parent="."]
+offset_left = 602.0
+offset_top = 380.0
+offset_right = 634.0
+offset_bottom = 512.0
+icon = ExtResource("2_35xq5")
+expand_icon = true
+
+[connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]

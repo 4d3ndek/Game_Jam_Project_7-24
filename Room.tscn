@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq34t5gasmvml"]
+
+[ext_resource type="Script" path="res://Room.gd" id="1_3g02p"]
+[ext_resource type="Texture2D" uid="uid://wu25rfrxx5ew" path="res://image.png" id="1_eil0u"]
+
+[node name="Room" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(320, 256)
+texture = ExtResource("1_eil0u")
+script = ExtResource("1_3g02p")
+floor_top = 200

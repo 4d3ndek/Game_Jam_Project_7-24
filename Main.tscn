@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://gapjknmg6rap"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_70ler"]
+[ext_resource type="PackedScene" uid="uid://crkyiyu1bkkrp" path="res://CharacterBody.tscn" id="1_dpty1"]
+[ext_resource type="PackedScene" uid="uid://bq34t5gasmvml" path="res://Room.tscn" id="3_ignqf"]
+[ext_resource type="PackedScene" uid="uid://divb718sekrmt" path="res://HUD.tscn" id="4_ssqei"]
+[ext_resource type="PackedScene" uid="uid://dejo2drnb54jk" path="res://interactable.tscn" id="4_uqkgk"]
+[ext_resource type="Texture2D" uid="uid://ddsxva8h657np" path="res://unnamed.jpg" id="5_dx30p"]
+[ext_resource type="PackedScene" uid="uid://dv1nqxiy8t6g8" path="res://Obstacle.tscn" id="6_qpht8"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_70ler")
+
+[node name="Player" parent="." instance=ExtResource("1_dpty1")]
+speed = 300
+size = Vector2(50, 50)
+
+[node name="Room" parent="." instance=ExtResource("3_ignqf")]
+y_sort_enabled = false
+
+[node name="Interactable" parent="Room" instance=ExtResource("4_uqkgk")]
+position = Vector2(298, -69)
+radius = 20.0
+interact_id = 1
+
+[node name="Interactable2" parent="Room" instance=ExtResource("4_uqkgk")]
+position = Vector2(-193, 31)
+radius = 20.0
+interact_id = 2
+
+[node name="Room2" parent="." instance=ExtResource("3_ignqf")]
+y_sort_enabled = false
+position = Vector2(1131, 376)
+texture = ExtResource("5_dx30p")
+
+[node name="Obstacle" parent="Room2" instance=ExtResource("6_qpht8")]
+position = Vector2(83, 119)
+size = Vector2(100, 100)
+
+[node name="Interactable" parent="Room2" instance=ExtResource("4_uqkgk")]
+position = Vector2(230, 131)
+radius = 20.0
+interact_id = 3
+
+[node name="Interactable2" parent="Room2" instance=ExtResource("4_uqkgk")]
+position = Vector2(137, 29)
+radius = 20.0
+interact_id = 2
+
+[node name="HUD" parent="." instance=ExtResource("4_ssqei")]
+
+[node name="DoorLeaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DoorEnterTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="interact" from="." to="HUD" method="_on_main_interact"]
+[connection signal="change_interact_id" from="Room/Interactable" to="HUD" method="_on_interactable_change_interact_id"]
+[connection signal="change_interact_id" from="Room/Interactable2" to="HUD" method="_on_interactable_change_interact_id"]
+[connection signal="change_interact_id" from="Room2/Interactable" to="HUD" method="_on_interactable_change_interact_id"]
+[connection signal="change_interact_id" from="Room2/Interactable2" to="HUD" method="_on_interactable_change_interact_id"]
+[connection signal="timeout" from="DoorLeaveTimer" to="." method="_on_door_leave_timer_timeout"]
+[connection signal="timeout" from="DoorEnterTimer" to="." method="_on_door_enter_timer_timeout"]
