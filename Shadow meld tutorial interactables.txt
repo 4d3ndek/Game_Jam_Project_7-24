@@ -1,3 +1,5 @@
+# tutorial interactables lines
+
 var interactables = {
 	3: {
 		"length" : 1,
@@ -28,3 +30,20 @@ var interactables = {
 		"messages" : ["The professor's desk. It seems she is preoccupied with more important endeavors than paperwork and grading."],
 	},
 }
+
+# Prof opening sequence
+
+{
+	"length" : 6,
+	"messages" : ["...Ah! G-greetings, Elaina. My apologies, I didn't hear you come in. Thank you for coming
+			on such short notice.", "I've called you here about your research. We've been making
+			great strides, which is why I feel comfortable putting you on a new project for the
+			time being.", "A subject I have been tracking for a good while now, one Mr. Daniel Lewis,
+			has suddenly disappeared. I was lucky enough to hear from a colleague so soon after it 
+			happened.", "I need you to work fast to find what's happened. An accomplished madman
+			like himself, either something terrible has happened or he's made some incredible
+			breakthrough.", "Regardless, the fruits of his research could have astounding implications
+			for us and our research, and now is the time to find exactly what he's been working on.", 
+			"Before you leave, I'll have you show me that you remember your powers so you carry this
+			out effectively and safely."],
+},
