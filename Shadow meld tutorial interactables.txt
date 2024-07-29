@@ -1,0 +1,30 @@
+var interactables = {
+	3: {
+		"length" : 1,
+		"messages" : ["A very strong incandescent bulb. The brightness makes it especially good at producing shadows."],
+	},
+	4: {
+		"length" : 1,
+		"messages" : ["This table has various textbooks for Nightshade's research. One is open to a chapter about harnessing fossil shadow essence."],
+	},
+	5: {
+		"length" : 1,
+		"messages" : ["A small light bulb casting a fossil's shadow. There are notes at the end of the table."],
+	},
+	6: {
+		"length" : 1,
+		"messages" : ["A selection of newspapers recounting anomolous people who were found weakened, and that cast no shadow shortly before they passed. One of them dates to 54 years ago."],
+	},
+	7: {
+		"length" : 1,
+		"messages" : ["There's a petri dish of...something here, with some prying tools. It's probably better not to ask what it is."],
+	},
+	8: {
+		"length" : 1,
+		"messages" : ["A microscope slotted with several interchangable samples, and a bottle of bleach. There are observations about the samples written in a grid, in the same arrangement as the samples themselves."],
+	},
+	9: {
+		"length" : 1,
+		"messages" : ["The professor's desk. It seems she is preoccupied with more important endeavors than paperwork and grading."],
+	},
+}
